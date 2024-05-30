@@ -4,6 +4,11 @@
 
 ## Task:
 - Write code to create a new Solana account.
+    + Create new keypair `solana-keygen new --outfile payer-keypair.json`
+    + Take pubkey `solana-keygen pubkey payer-keypair.json`
+    + Air drop SOL `solana airdrop 1 <payer_public_key> --url https://api.devnet.solana.com`
+    + Check balance `solana balance ~/path/to/payer-keypair.json`
+    
 - Write code to transfer 5,000 lamports to the account with address `63EEC9FfGyksm7PkVC6z8uAmqozbQcTzbkWJNsgqjkFs`.
 - Write code to create a new Solana account and transfer 5,000 lamports to it.
 - Write code to create a new Solana account, transfer 5,000 lamports to this new account, and also transfer 7,000 lamports to the account `63EEC9FfGyksm7PkVC6z8uAmqozbQcTzbkWJNsgqjkFs`.
