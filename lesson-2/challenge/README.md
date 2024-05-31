@@ -3,13 +3,13 @@
 - Slides:https://docs.google.com/presentation/d/1iO2LCIWw6_b00a_A5thRl2XSf-m3cjBn33qUv5boMvE/edit?usp=sharing
 
 ## Task:
-- Write code to create a new Solana account --> ##[reference](https://docs.rs/solana-program/latest/solana_program/system_instruction/fn.create_account.html).
+- Write code to create a new Solana account --> [reference](https://docs.rs/solana-program/latest/solana_program/system_instruction/fn.create_account.html).
     + Create new keypair `solana-keygen new --outfile payer-keypair.json`
     + Take pubkey `solana-keygen pubkey payer-keypair.json`
     + Air drop SOL `solana airdrop 1 <payer_public_key> --url https://api.devnet.solana.com`
     + Check balance `solana balance ~/path/to/payer-keypair.json`
     
-- Write code to transfer 5,000 lamports to the account with address `63EEC9FfGyksm7PkVC6z8uAmqozbQcTzbkWJNsgqjkFs` --> ##[reference](https://docs.rs/solana-program/latest/solana_program/system_instruction/fn.transfer.html).
+- Write code to transfer 5,000 lamports to the account with address `63EEC9FfGyksm7PkVC6z8uAmqozbQcTzbkWJNsgqjkFs` --> [reference](https://docs.rs/solana-program/latest/solana_program/system_instruction/fn.transfer.html).
 - Write code to create a new Solana account and transfer 5,000 lamports to it.
 - Write code to create a new Solana account, transfer 5,000 lamports to this new account, and also transfer 7,000 lamports to the account `63EEC9FfGyksm7PkVC6z8uAmqozbQcTzbkWJNsgqjkFs`.
 
