@@ -1,14 +1,14 @@
 use mpl_token_metadata::instructions as metadata_instruction;
 use mpl_token_metadata::instructions::CreateMetadataAccountV3InstructionArgs;
 use mpl_token_metadata::types::DataV2;
-use mpl_token_metadata::ID as metadata_program_id;
-use solana_client::rpc_client::RpcClient;
+use mpl_token_metadata::ID as metadata_program_id; // mpl_token_metadat: dùng làm việc vs metada của token
+use solana_client::rpc_client::RpcClient; // solana_client, solana_sdk: cung cấp các chức năng để tương tác với mạng Solana
 use solana_sdk::pubkey::Pubkey;
 use solana_sdk::system_program;
 use solana_sdk::transaction::Transaction;
 use solana_sdk::{program_pack::Pack, signature::Keypair, signer::Signer, system_instruction};
-use spl_associated_token_account::get_associated_token_address;
-use spl_associated_token_account::instruction;
+use spl_associated_token_account::get_associated_token_address; 
+use spl_associated_token_account::instruction; // spl_associated_token_account, spl_token: thư viện SPL để làm việc với token trên Solana
 use spl_token::instruction as token_instruction;
 use spl_token::state::Mint;
 use spl_token::ID as token_program_id;
@@ -43,9 +43,9 @@ fn mint_my_first_token (
             &mint_account_key.pubkey().to_bytes(),
         ],
         &metadata_program_id
-    );
+    ); // để tìm địa chỉ chương trình
 
-    let associated_token_account_address = get_associated_token_address(&payer.pubkey(), &mint_account_key.pubkey());
+    let associated_token_account_address = get_associated_token_address(&payer.pubkey(), &mint_account_key.pubkey()); // lấy địa chỉ tài khoản token liên kết
 
     let rent = client.get_minimum_balance_for_rent_exemption(Mint::LEN)?;
     let create_mint_account = system_instruction::create_account(
